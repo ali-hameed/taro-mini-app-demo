@@ -1,13 +1,14 @@
-import Taro from "@tarojs/taro";
-import { Component } from "react";
-import { View, Image, Text, ScrollView } from "@tarojs/components";
-import viewPng from "@/assets/iconpark/waterfalls-h.png";
-import contentPng from "@/assets/iconpark/add-text-two.png";
-import formPng from "@/assets/iconpark/list-view.png";
-import mediaPng from "@/assets/iconpark/play-two.png";
-import navPng from "@/assets/iconpark/navigation.png";
+// @ts-nocheck
+import Taro from '@tarojs/taro';
+import { Component } from 'react';
+import { View, Image, Text, ScrollView } from '@tarojs/components';
+import viewPng from '@/assets/iconpark/waterfalls-h.png';
+import contentPng from '@/assets/iconpark/add-text-two.png';
+import formPng from '@/assets/iconpark/list-view.png';
+import mediaPng from '@/assets/iconpark/play-two.png';
+import navPng from '@/assets/iconpark/navigation.png';
 
-import "./index.scss";
+import './index.scss';
 
 const PNGS = {
   viewPng,
@@ -23,70 +24,55 @@ export default class Index extends Component<never, any> {
     this.state = {
       list: [
         {
-          id: "view",
-          name: "视图容器",
+          id: 'view',
+          name: 'View',
           open: false,
           pages: [
-            "view",
-            "scroll-view",
-            "swiper",
-            "virtual-list",
-            "movable-view",
-            "page-container"
-          ]
+            'view',
+            'scroll-view',
+            'swiper',
+            'virtual-list',
+            'movable-view',
+            'page-container',
+          ],
         },
         {
-          id: "content",
-          name: "基础内容",
+          id: 'content',
+          name: 'Content',
           open: false,
-          pages: ["text", "icon", "progress", "rich-text"]
+          pages: ['text', 'icon', 'progress', 'rich-text'],
         },
         {
-          id: "form",
-          name: "表单组件",
-          open: false,
-          pages: [
-            "button",
-            "checkbox",
-            "form",
-            "input",
-            "label",
-            "picker",
-            "picker-view",
-            "radio",
-            "slider",
-            "switch",
-            "textarea"
-          ]
-        },
-        {
-          id: "nav",
-          name: "导航",
-          open: false,
-          pages: ["navigator"]
-        },
-        {
-          id: "media",
-          name: "媒体组件",
+          id: 'form',
+          name: 'Form',
           open: false,
           pages: [
-            "image",
-            // "audio", 已废弃
-            "video",
-            "camera"
-          ]
+            'button',
+            'checkbox',
+            'form',
+            'input',
+            'label',
+            'picker',
+            'picker-view',
+            'radio',
+            'slider',
+            'switch',
+            'textarea',
+          ],
         },
-        // {
-        //   id: "map",
-        //   name: "地图",
-        //   pages: ["map"]
-        // },
-        // {
-        //   id: "canvas",
-        //   name: "画布",
-        //   pages: ["canvas"]
-        // }
-      ]
+        {
+          id: 'nav',
+          name: 'Nav',
+          open: false,
+          pages: ['navigator'],
+        },
+        {
+          id: 'media',
+          name: 'Media',
+          open: false,
+          pages: ['image', 'video', 'camera'],
+        },
+      ],
     };
   }
 
@@ -100,58 +86,60 @@ export default class Index extends Component<never, any> {
       }
     }
     this.setState({
-      list: list
+      list: list,
     });
   };
 
   goToComponent = (page: { url: string }) => {
     Taro.navigateTo({
-      url: page.url
+      url: page.url,
     });
   };
 
   render() {
     return (
-      <ScrollView className='index' enableBackToTop style={{ paddingBottom: 80 }}>
-        <View className='index-hd'>
-          <View className='index-desc'>
-            <Text className='index-desc_text'>
-              以下将展示 Taro 官方组件能力。
-            </Text>
+      <ScrollView
+        className="index"
+        enableBackToTop
+        style={{ paddingBottom: 80 }}
+      >
+        <View className="index-hd">
+          <View className="index-desc">
+            <Text className="index-desc_text">Components Page</Text>
           </View>
         </View>
-        <View className='index-bd'>
-          <View className='kind-list'>
+        <View className="index-bd">
+          <View className="kind-list">
             {this.state.list
-              .map(item => {
+              .map((item) => {
                 item.hdClass =
-                  "kind-list-item-hd " +
-                  (item.open ? "kind-list-item-hd-show" : "");
+                  'kind-list-item-hd ' +
+                  (item.open ? 'kind-list-item-hd-show' : '');
                 item.bdClass =
-                  "kind-list-item-bd " +
-                  (item.open ? "kind-list-item-bd-show" : "");
+                  'kind-list-item-bd ' +
+                  (item.open ? 'kind-list-item-bd-show' : '');
                 item.boxClass =
-                  "navigator-box " + (item.open ? "navigator-box-show" : "");
+                  'navigator-box ' + (item.open ? 'navigator-box-show' : '');
                 item.imgSrc = PNGS[`${item.id}Png`];
-                item._pages = item.pages.map(page => {
+                item._pages = item.pages.map((page) => {
                   return {
                     page: page,
-                    url: `/pages/components/pages/${page}/${page}`
+                    url: `/pages/components/pages/${page}/${page}`,
                   };
                 });
                 return item;
               })
               .map((item, index) => {
                 return (
-                  <View className='kind-list-item' key={index}>
+                  <View className="kind-list-item" key={index}>
                     <View
                       className={item.hdClass}
                       onClick={this.kindToggle(item.id)}
                     >
-                      <View className='kind-list-text'>
+                      <View className="kind-list-text">
                         <Text>{item.name}</Text>
                       </View>
-                      <Image className='kind-list-img' src={item.imgSrc} />
+                      <Image className="kind-list-img" src={item.imgSrc} />
                     </View>
                     <View className={item.bdClass}>
                       <View className={item.boxClass}>
@@ -160,12 +148,12 @@ export default class Index extends Component<never, any> {
                             <View
                               onClick={this.goToComponent.bind(this, page)}
                               key={idx}
-                              className='navigator'
+                              className="navigator"
                             >
-                              <Text className='navigator-text'>
+                              <Text className="navigator-text">
                                 {page.page}
                               </Text>
-                              <View className='navigator-arrow' />
+                              <View className="navigator-arrow" />
                             </View>
                           );
                         })}

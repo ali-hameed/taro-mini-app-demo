@@ -1,3 +1,3 @@
 export default {
-  navigationBarTitleText: '全局'
-}
+  navigationBarTitleText: 'Global Page',
+};

@@ -1,3 +1,3 @@
 export default {
-  navigationBarTitleText: '接口'
+  navigationBarTitleText: 'Taro Alipay Mini-Program Demo'
 }
