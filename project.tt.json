@@ -1,7 +1,7 @@
 {
   "miniprogramRoot": "./",
-  "projectname": "taro-demo",
-  "appid": "touristappid",
+  "projectname": "isc-taro-demo-app",
+  "appid": "<insert-your-app-id>",
   "setting": {
     "es6": false,
     "minified": false

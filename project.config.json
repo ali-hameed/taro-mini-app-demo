@@ -1,8 +1,8 @@
 {
   "miniprogramRoot": "./dist",
-  "projectname": "taro-demo",
-  "description": "",
-  "appid": "touristappid",
+  "projectname": "isc-taro-demo-app",
+  "description": "A Taro Custom Mini-App Forked From Taro Playground Github project.",
+  "appid": "<insert-your-app-id>",
   "setting": {
     "urlCheck": true,
     "es6": false,

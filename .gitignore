@@ -1,5 +1,4 @@
 dist/
-key/
 
 # OSX
 #
@@ -76,3 +75,7 @@ buck-out/
 # taro
 #
 .swc
+
+# lock files
+yarn.lock
+package-lock.json
