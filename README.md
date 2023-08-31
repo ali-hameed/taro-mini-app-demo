@@ -1,6 +1,6 @@
 # Taro Mini-Program Demo App
 
-The Taro Playground App is a cross-platform application developed using Taro, to help developers develop and debug Taro applications. It is initialized using [taro react native template](https://github.com/nervjs/taro-project-templates/tree/v3.1/react-native).
+The Taro Playground App is a cross-platform application developed using Taro, to help developers develop and debug Taro applications.
 
 ## Preview
 
